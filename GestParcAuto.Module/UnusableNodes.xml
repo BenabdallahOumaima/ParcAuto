@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="GestParcAuto.Module.BusinessObjects.MecanicienNS.Taches">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="Description" PredefinedValues="Vidange;Réparation;Panne;Diagonstic" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+</Application>

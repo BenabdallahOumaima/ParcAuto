@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="GestParcAuto">
+  <BOModel>
+    <Class Name="GestParcAuto.Module.BusinessObjects.Documentadminist">
+      <OwnMembers>
+        <Member Name="Type" PredefinedValues="Assurance;Vignette;facture;Visite" />
+      </OwnMembers>
+    </Class>
+    <Class Name="GestParcAuto.Module.BusinessObjects.Planning">
+      <OwnMembers>
+        <Member Name="Destination" PredefinedValues="Ariana;Béja;BenArous;Bizerte;Gabés;Gafsa;Jendouba;Kairouan;Kassrine;Kébili;LeKef;mahdia;LaManouba;Médenine;Monastir;Nabeul;Sfax;SidiBouzid;Siliana;Sousse;Tataouine;Tozur;Tunis;Zaghouan" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="Tâches Mecanicein" Removed="True" />
+    </Items>
+  </NavigationItems>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="18.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="ParcAuto" Logo="BO_Vendor_32x32">
+  <Options LookupSmallCollectionItemCount="26" />
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerAspNetModule" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemAspNetModule" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="18.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>

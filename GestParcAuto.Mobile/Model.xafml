@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="ParcAuto" Logo="Transit_32x32">
+  <BOModel>
+    <Class Name="GestParcAuto.Module.BusinessObjects.Administrateur" ImageName="BO_Lead" />
+    <Class Name="GestParcAuto.Module.BusinessObjects.ChauffeurNS.Chauffeur" DefaultDetailViewImage="BO_Person" DefaultListViewImage="BO_Person" ImageName="BO_Person" />
+    <Class Name="GestParcAuto.Module.BusinessObjects.ChauffeurNS.Rapport_chauffeur" ImageName="BO_Task" />
+    <Class Name="GestParcAuto.Module.BusinessObjects.ChauffeurNS.Rapport_maintenance" DefaultDetailViewImage="BO_Task" ImageName="BO_Task" />
+    <Class Name="GestParcAuto.Module.BusinessObjects.ChauffeurNS.Réclamation" DefaultDetailViewImage="BO_Document" ImageName="BO_Document" />
+    <Class Name="GestParcAuto.Module.BusinessObjects.Location" DefaultDetailViewImage="GeoPointMap_32x32" DefaultListViewImage="GeoPointMap_32x32" ImageName="GeoPointMap_32x32" />
+    <Class Name="GestParcAuto.Module.BusinessObjects.MecanicienNS.Mecanicien" DefaultDetailViewImage="BO_Employee" ImageName="BO_Employee" DefaultListViewImage="BO_Employee" />
+    <Class Name="GestParcAuto.Module.BusinessObjects.Mission" DefaultDetailViewImage="BO_Document" ImageName="BO_Document" />
+    <Class Name="GestParcAuto.Module.BusinessObjects.Rendus" DefaultDetailViewImage="BO_List" ImageName="BO_List" />
+    <Class Name="GestParcAuto.Module.BusinessObjects.Vehicule" DefaultDetailViewImage="BO_Vendor" ImageName="BO_Vendor" />
+  </BOModel>
+  <CreatableItems>
+    <CreatableItem ClassName="GestParcAuto.Module.BusinessObjects.Location" ImageName="Travel_MapPointer" />
+    <CreatableItem ClassName="GestParcAuto.Module.BusinessObjects.MecanicienNS.Maintenance" ImageName="BO_Document" />
+  </CreatableItems>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default" IsNewNode="True" Removed="True">
+        <Items IsNewNode="True">
+          <Item Id="Location_ListView" ViewId="Location_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Maintenance_ListView" ViewId="Maintenance_ListView" ObjectKey="" ImageName="BO_List" IsNewNode="True" />
+          <Item Id="Mission_ListView" ViewId="Mission_ListView" ObjectKey="" ImageName="BO_Note" IsNewNode="True" />
+          <Item Id="Rapport_chauffeur_ListView" ViewId="Rapport_chauffeur_ListView" ObjectKey="" ImageName="BO_Document" IsNewNode="True" />
+          <Item Id="Rapport_maintenance_ListView" ViewId="Rapport_maintenance_ListView" ObjectKey="" ImageName="BO_Document" IsNewNode="True" />
+          <Item Id="Réclamation_ListView" ViewId="Réclamation_ListView" ObjectKey="" ImageName="BO_Resume" IsNewNode="True" />
+          <Item Id="Rendus_ListView" ViewId="Rendus_ListView" ObjectKey="" ImageName="BO_Report" IsNewNode="True" />
+          <Item Id="Vehicule_ListView" ObjectKey="" ViewId="Vehicule_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="KPI" Removed="True" />
+      <Item Id="other" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Administrateur_ListView" ViewId="Administrateur_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="CarEvent_ListView" ViewId="CarEvent_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Chauffeur_ListView" ViewId="Chauffeur_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Event_ListView" ViewId="Event_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="ExtendedSecurityRole_ListView" ViewId="ExtendedSecurityRole_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Mecanicien_ListView" ViewId="Mecanicien_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="MyDetails" ViewId="PermissionPolicyUser_DetailView" ObjectKey="@CurrentUserID" Caption="My Details" ImageName="BO_MyDetails" IsNewNode="True" />
+          <Item Id="PermissionPolicyRole_ListView" ViewId="PermissionPolicyRole_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="PermissionPolicyUser_ListView" ViewId="PermissionPolicyUser_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Task_ListView" ViewId="Task_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Utilisateur_ListView" ViewId="Utilisateur_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Reports" Removed="True" />
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemMobileModule" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="18.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="Location_DetailView" ImageName="GeoPointMap_32x32" />
+    <ListView Id="Location_ListView" ImageName="GeoPointMap_32x32" EditorTypeName="DevExpress.ExpressApp.Maps.Mobile.Editors.MobileMapsListEditor" />
+    <ListView Id="Location_ListView_Maps" ClassName="GestParcAuto.Module.BusinessObjects.Location" ImageName="GeoPointMap_32x32" Caption="Location" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Latitude" PropertyName="Latitude" Width="50" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Longitude" PropertyName="Longitude" Width="50" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="Title" PropertyName="Title" Width="70" Index="2" IsNewNode="True" />
+      </Columns>
+      <RowLayout IsNewNode="True">
+        <RowLayoutItem Id="Latitude" Column="Latitude" ShowCaption="False" IsNewNode="True" />
+      </RowLayout>
+    </ListView>
+    <DetailView Id="Rapport_chauffeur_DetailView" ImageName="BO_Document" />
+    <DetailView Id="Rapport_maintenance_DetailView" ImageName="BO_Document" />
+  </Views>
+</Application>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="GestParcAuto.Module.BusinessObjects.Location" DefaultDetailViewImage="CustomerQuickLocations" />
+  </BOModel>
+  <CreatableItems>
+    <CreatableItem ClassName="GestParcAuto.Module.BusinessObjects.Location" ImageName="GeoPoinMaps" />
+    <CreatableItem ClassName="GestParcAuto.Module.BusinessObjects.MecanicienNS.Maintenance" ImageName="BO_Document" />
+  </CreatableItems>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="CarEvent_ListView" Removed="True" />
+          <Item Id="Event_ListView" Removed="True" />
+          <Item Id="ExtendedSecurityRole_ListView" Removed="True" />
+          <Item Id="Location_ListView" ImageName="GeoPoinMaps" />
+          <Item Id="Maintenance_ListView" ImageName="BO_List" />
+          <Item Id="Mecanicien_ListView" ImageName="BO_Customer" />
+          <Item Id="Mission_ListView" ImageName="BO_Note" />
+          <Item Id="Rapport_ListView" ImageName="BO_Report" />
+          <Item Id="Vehicule_ListView" ImageName="BO_Vendor" />
+        </Items>
+      </Item>
+      <Item Id="KPI" Removed="True" />
+      <Item Id="Other" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="CarEvent_ListView" ViewId="CarEvent_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Event_ListView" ViewId="Event_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="ExtendedSecurityRole_ListView" ViewId="ExtendedSecurityRole_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Utilisateur_ListView" ViewId="Utilisateur_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Reports" Removed="True" />
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemMobileModule" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="18.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="Location_ListView_Copy" ClassName="GestParcAuto.Module.BusinessObjects.Location" ImageName="CustomerQuickLocations" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Latitude" PropertyName="Latitude" Width="50" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Longitude" PropertyName="Longitude" Width="50" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="Title" PropertyName="Title" Width="70" Index="2" IsNewNode="True" />
+      </Columns>
+      <MobileMapSettings Type="Satellite" IsNewNode="True" />
+      <RowLayout IsNewNode="True">
+        <RowLayoutItem Id="Latitude" Column="Latitude" ShowCaption="False" IsNewNode="True" />
+      </RowLayout>
+    </ListView>
+  </Views>
+</Application>
