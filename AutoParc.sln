@@ -17,8 +17,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoParc.Module.Win", "Gest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoParc.Win", "GestParcAuto.Win\AutoParc.Win.csproj", "{D05D93DF-312D-4D4E-B980-726871EC7833}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRibbon", "DXApplication4\AutoRibbon\AutoRibbon.csproj", "{6AEF47B6-4B09-4017-8F55-82E44BB6D5AD}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,12 +66,6 @@ Global
 		{D05D93DF-312D-4D4E-B980-726871EC7833}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
 		{D05D93DF-312D-4D4E-B980-726871EC7833}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D05D93DF-312D-4D4E-B980-726871EC7833}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6AEF47B6-4B09-4017-8F55-82E44BB6D5AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6AEF47B6-4B09-4017-8F55-82E44BB6D5AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6AEF47B6-4B09-4017-8F55-82E44BB6D5AD}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
-		{6AEF47B6-4B09-4017-8F55-82E44BB6D5AD}.EasyTest|Any CPU.Build.0 = Release|Any CPU
-		{6AEF47B6-4B09-4017-8F55-82E44BB6D5AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6AEF47B6-4B09-4017-8F55-82E44BB6D5AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

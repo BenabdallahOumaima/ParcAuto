@@ -158,12 +158,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessObjects\administrateur\ClearMissionController.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BusinessObjects\administrateur\ClearMissionController.Designer.cs">
-      <DependentUpon>ClearMissionController.cs</DependentUpon>
-    </Compile>
     <Compile Include="BusinessObjects\administrateur\Vehicule.cs" />
     <Compile Include="BusinessObjects\VehiEvent.cs" />
     <Compile Include="BusinessObjects\administrateur\Maintenance.cs" />
@@ -186,9 +180,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BusinessObjects\administrateur\ClearMissionController.resx">
-      <DependentUpon>ClearMissionController.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
