@@ -120,6 +120,7 @@ namespace GestParcAuto.Module.BusinessObjects
         [VisibleInDetailView(false)]
         [VisibleInListView(false)]
         [XafDisplayName("date d'échéance")]
+       
         public DateTime DueDate
         {
             get { return _DueDate; }
@@ -297,11 +298,6 @@ namespace GestParcAuto.Module.BusinessObjects
         {
             get { return GetCollection<Maintenance>("Maintenances"); }
         }
-        [Association("Vehicule-Rendus")]
-      public XPCollection<Rendus> Rendus
-        {
-            get { return GetCollection<Rendus>("Rendus"); }
-        }
-
+       
     }
 }

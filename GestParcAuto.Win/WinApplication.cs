@@ -28,7 +28,7 @@ namespace GestParcAuto.Win {
         #endregion
         public GestParcAutoWindowsFormsApplication() {
             InitializeComponent();
-            ((SecurityStrategy)Security).AnonymousAllowedTypes.Add(typeof(Company));
+     //       ((SecurityStrategy)Security).AnonymousAllowedTypes.Add(typeof());
 
             InitializeDefaults();
         }
