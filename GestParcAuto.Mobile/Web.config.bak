@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0"?>
 <!--
     Note: As an alternative to hand editing this file you can use the
     web admin tool to configure settings for your application. Use
@@ -9,11 +9,11 @@
 -->
 <configuration>
   <appSettings>
-    <add key="Modules" value="" />
+    <add key="Modules" value=""/>
     <!--
     <add key="Languages" value="de;es;ja;ru" />
     -->
-    <add key="EnableDiagnosticActions" value="False" />
+    <add key="EnableDiagnosticActions" value="False"/>
     <!--
     <add key="XafMobileStaticFilesLocation" value="Static" /> 
     -->
@@ -23,8 +23,8 @@
     -->
   </appSettings>
   <connectionStrings>
-    <add name="EasyTestConnectionString" connectionString="Integrated Security=SSPI;Pooling=false;Data Source=(localdb)\mssqllocaldb;Initial Catalog=GestParcAutoEasyTest" />
-    <add name="ConnectionString" connectionString="Integrated Security=SSPI;Pooling=false;Data Source=(localdb)\mssqllocaldb;Initial Catalog=GestParcAuto" />
+    <add name="EasyTestConnectionString" connectionString="Integrated Security=SSPI;Pooling=false;Data Source=(localdb)\mssqllocaldb;Initial Catalog=GestParcAutoEasyTest"/>
+    <add name="ConnectionString" connectionString="Integrated Security=SSPI;Pooling=false;Data Source=(localdb)\mssqllocaldb;Initial Catalog=GestParcAuto"/>
     <!--    
     Use the following connection string to connect to a Jet (Microsoft Access) database that is already created and located in the <application root>/app_data folder. 
     <add name="ConnectionString" connectionString="Provider=Microsoft.Jet.OLEDB.4.0;Password=;User ID=Admin;Data Source=|DataDirectory|\GestParcAuto.mdb;Mode=Share Deny None;"/>
@@ -35,7 +35,7 @@
   <system.diagnostics>
     <switches>
       <!-- Use the one of predefined values: 0-Off, 1-Errors, 2-Warnings, 3-Info, 4-Verbose. The default value is 3. -->
-      <add name="eXpressAppFramework" value="3" />
+      <add name="eXpressAppFramework" value="3"/>
       <!--
       <add name="XPO" value="3" />
     -->
@@ -44,81 +44,91 @@
   <system.web>
     <compilation debug="true">
       <assemblies>
+        <add assembly="DevExpress.ExpressApp.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+        <add assembly="DevExpress.Persistent.Base.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+        <add assembly="DevExpress.ExpressApp.Mobile.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+        <add assembly="DevExpress.Data.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+        <add assembly="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed"/>
+        <add assembly="DevExpress.ExpressApp.Maps.Mobile.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
       </assemblies>
     </compilation>
-    <machineKey validationKey="57BF3E44713E69E03AC52BD1DA66AD14EBD324EFDF95773E0DF56B9D2BE425B808FA3F3EB769E98860A73D0FABE7E4FEDCE166DC2EF3266FE93E7DC95090E194,IsolateApps"  
-            decryptionKey="E6DBFA600F8CDA7EAB726B098B0C898AC4A7A589073F4474718CFFF6B93AE8BA,IsolateApps" />
+    <machineKey validationKey="57BF3E44713E69E03AC52BD1DA66AD14EBD324EFDF95773E0DF56B9D2BE425B808FA3F3EB769E98860A73D0FABE7E4FEDCE166DC2EF3266FE93E7DC95090E194,IsolateApps" decryptionKey="E6DBFA600F8CDA7EAB726B098B0C898AC4A7A589073F4474718CFFF6B93AE8BA,IsolateApps"/>
+    <httpHandlers>
+      <add verb="*" path="Static*" type="DevExpress.ExpressApp.Mobile.StaticResourcesHttpHandler, DevExpress.ExpressApp.Mobile.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+      <add verb="GET,POST" path="ReportsHandler*" type="DevExpress.ExpressApp.ReportsV2.Mobile.ReportsHandler, DevExpress.ExpressApp.ReportsV2.Mobile.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+    </httpHandlers>
   </system.web>
   <system.serviceModel>
     <bindings>
       <webHttpBinding>
-        <binding name="msgSize" maxReceivedMessageSize="2147483647" />
+        <binding name="msgSize" maxReceivedMessageSize="2147483647"/>
       </webHttpBinding>
     </bindings>
     <services>
       <service name="GestParcAuto.Mobile.DataService">
-        <endpoint address="" behaviorConfiguration="" binding="webHttpBinding" bindingConfiguration="msgSize" contract="System.Data.Services.IRequestHandler" />
+        <endpoint address="" behaviorConfiguration="" binding="webHttpBinding" bindingConfiguration="msgSize" contract="System.Data.Services.IRequestHandler"/>
       </service>
       <service name="GestParcAuto.Mobile.MetadataService">
-        <endpoint address="" behaviorConfiguration="web" binding="webHttpBinding" bindingConfiguration="" contract="DevExpress.ExpressApp.Mobile.Services.IMobileMetadataService" />
+        <endpoint address="" behaviorConfiguration="web" binding="webHttpBinding" bindingConfiguration="" contract="DevExpress.ExpressApp.Mobile.Services.IMobileMetadataService"/>
       </service>
       <service name="GestParcAuto.Mobile.DownloadReportService">
-        <endpoint address="" behaviorConfiguration="web" binding="webHttpBinding" bindingConfiguration="msgSize" contract="DevExpress.ExpressApp.ReportsV2.Mobile.IXafDownloadReportService" />
+        <endpoint address="" behaviorConfiguration="web" binding="webHttpBinding" bindingConfiguration="msgSize" contract="DevExpress.ExpressApp.ReportsV2.Mobile.IXafDownloadReportService"/>
       </service>
     </services>
     <behaviors>
       <serviceBehaviors>
         <behavior>
           <!-- To avoid disclosing metadata information, set the value below to false and remove the metadata endpoint above before deployment -->
-          <serviceMetadata httpGetEnabled="false" />
+          <serviceMetadata httpGetEnabled="false"/>
           <!-- To receive exception details in faults for debugging purposes, set the value below to true.  Set to false before deployment to avoid disclosing exception information -->
-          <serviceDebug includeExceptionDetailInFaults="false" />
+          <serviceDebug includeExceptionDetailInFaults="false"/>
         </behavior>
       </serviceBehaviors>
       <endpointBehaviors>
         <behavior name="web">
-          <webHttp />
+          <webHttp/>
         </behavior>
       </endpointBehaviors>
     </behaviors>
-    <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true" />
+    <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true"/>
   </system.serviceModel>
   <system.webServer>
     <validation validateIntegratedModeConfiguration="false"/>
-    <httpRedirect enabled="true" httpResponseStatus="Permanent" >
-      <add wildcard="/" destination="Static" />
+    <httpRedirect enabled="true" httpResponseStatus="Permanent">
+      <add wildcard="/" destination="Static"/>
     </httpRedirect>
-	<handlers>
+    <handlers>
       <add name="MobileResources" verb="GET" path="Static*" type="GestParcAuto.Mobile.ResourcesHttpHandler"/>
-      <add name="Reports" verb="GET,POST" path="ReportsHandler*" type="DevExpress.ExpressApp.ReportsV2.Mobile.ReportsHandler, DevExpress.ExpressApp.ReportsV2.Mobile.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+      <add name="Reports" verb="GET,POST" path="ReportsHandler*" type="DevExpress.ExpressApp.ReportsV2.Mobile.ReportsHandler, DevExpress.ExpressApp.ReportsV2.Mobile.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
     </handlers>
   </system.webServer>
   <runtime>
     <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
       <dependentAssembly>
-        <assemblyIdentity name="Microsoft.Data.Edm" publicKeyToken="31bf3856ad364e35" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-5.7.0.0" newVersion="5.7.0.0" />
+        <assemblyIdentity name="Microsoft.Data.Edm" publicKeyToken="31bf3856ad364e35" culture="neutral"/>
+        <bindingRedirect oldVersion="0.0.0.0-5.7.0.0" newVersion="5.7.0.0"/>
       </dependentAssembly>
       <dependentAssembly>
-        <assemblyIdentity name="Microsoft.Data.OData" publicKeyToken="31bf3856ad364e35" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-5.7.0.0" newVersion="5.7.0.0" />
+        <assemblyIdentity name="Microsoft.Data.OData" publicKeyToken="31bf3856ad364e35" culture="neutral"/>
+        <bindingRedirect oldVersion="0.0.0.0-5.7.0.0" newVersion="5.7.0.0"/>
       </dependentAssembly>
       <dependentAssembly>
-        <assemblyIdentity name="Microsoft.Data.Services" publicKeyToken="31bf3856ad364e35" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-5.7.0.0" newVersion="5.7.0.0" />
+        <assemblyIdentity name="Microsoft.Data.Services" publicKeyToken="31bf3856ad364e35" culture="neutral"/>
+        <bindingRedirect oldVersion="0.0.0.0-5.7.0.0" newVersion="5.7.0.0"/>
       </dependentAssembly>
       <dependentAssembly>
-        <assemblyIdentity name="Microsoft.Data.Services.Client" publicKeyToken="31bf3856ad364e35" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-5.7.0.0" newVersion="5.7.0.0" />
+        <assemblyIdentity name="Microsoft.Data.Services.Client" publicKeyToken="31bf3856ad364e35" culture="neutral"/>
+        <bindingRedirect oldVersion="0.0.0.0-5.7.0.0" newVersion="5.7.0.0"/>
       </dependentAssembly>
       <dependentAssembly>
-        <assemblyIdentity name="System.Spatial" publicKeyToken="31bf3856ad364e35" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-5.6.4.0" newVersion="5.6.4.0" />
+        <assemblyIdentity name="System.Spatial" publicKeyToken="31bf3856ad364e35" culture="neutral"/>
+        <bindingRedirect oldVersion="0.0.0.0-5.6.4.0" newVersion="5.6.4.0"/>
       </dependentAssembly>
       <dependentAssembly>
-        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-11.0.0.0" newVersion="11.0.0.0" />
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral"/>
+        <bindingRedirect oldVersion="0.0.0.0-11.0.0.0" newVersion="11.0.0.0"/>
       </dependentAssembly>
     </assemblyBinding>
   </runtime>
 </configuration>
+<!--ProjectGuid: 920ADD88-8181-492E-B860-89199E8C401E-->

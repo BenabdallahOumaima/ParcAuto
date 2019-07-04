@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
     Note: As an alternative to hand editing this file you can use the
     web admin tool to configure settings for your application. Use
@@ -21,20 +21,20 @@
     <compression enableHtmlCompression="true" enableCallbackCompression="true" enableResourceCompression="true" enableResourceMerging="true" />
     <themes enableThemesAssembly="true" theme="Office2010Blue" />
     <resources>
-      <add type="ThirdParty"/>
-      <add type="DevExtreme"/>
+      <add type="ThirdParty" />
+      <add type="DevExtreme" />
     </resources>
   </devExpress>
   <appSettings>
     <add key="Modules" value="" />
     <add key="ErrorReportEmail" value="" />
     <add key="ErrorReportEmailServer" value="" />
-    <!--
-    <add key="ErrorReportEmailSubject" value="{0:ExceptionMessage}"/>
-    <add key="ErrorReportEmailFrom" value="null@nospam.com"/>
-    <add key="ErrorReportEmailFromName" value="{0:ApplicationName} Error handling system"/>    
-    <add key="Languages" value="de;es;ja;ru" />
-    -->
+    <add key="GoogleClientID" value="YourGoogleClientID" />
+    <add key="GoogleClientSecret" value="YourGoogleClientSecret" />
+    <add key="FacebookClientID" value="YourFacebookClientID" />
+    <add key="FacebookClientSecret" value="YourFacebookClientSecret" />
+    <add key="MicrosoftClientID" value="YourMicrosoftClientID" />
+    <add key="MicrosoftClientSecret" value="YourMicrosoftClientSecret" />
     <add key="SimpleErrorReportPage" value="" />
     <add key="RichErrorReportPage" value="Error.aspx" />
     <add key="EnableDiagnosticActions" value="False" />
@@ -64,16 +64,16 @@
   </system.diagnostics>
   <system.webServer>
     <handlers>
-      <add name="ASPxUploadProgressHandler" verb="GET,POST" path="ASPxUploadProgressHandlerPage.ashx" type="DevExpress.Web.ASPxUploadProgressHttpHandler, DevExpress.Web.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" preCondition="integratedMode"/>
-      <add name="XafHttpHandler" path="DXX.axd" verb="*" type="DevExpress.ExpressApp.Web.XafHttpHandler, DevExpress.ExpressApp.Web.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" preCondition="integratedMode"/>    
+      <add name="ASPxUploadProgressHandler" verb="GET,POST" path="ASPxUploadProgressHandlerPage.ashx" type="DevExpress.Web.ASPxUploadProgressHttpHandler, DevExpress.Web.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" preCondition="integratedMode" />
+      <add name="XafHttpHandler" path="DXX.axd" verb="*" type="DevExpress.ExpressApp.Web.XafHttpHandler, DevExpress.ExpressApp.Web.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" preCondition="integratedMode" />    
       <add name="ASPxHttpHandlerModuleXAF" path="DXXRD.axd" verb="GET,POST" type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" preCondition="integratedMode" />
       <add name="ASPxWebDocumentViewerHandlerModule" path="DXXRDV.axd" verb="GET,POST" type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" preCondition="integratedMode" />
       <add name="ASPxQueryBuilderDesignerHandlerModule" path="DXQB.axd" verb="GET,POST" type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" preCondition="integratedMode" />
     </handlers>
     <validation validateIntegratedModeConfiguration="false" />
     <modules>
-      <add name="ASPxHttpHandlerModule" type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
-      <add name="XafHttpModule" type="DevExpress.ExpressApp.Web.XafHttpModule, DevExpress.ExpressApp.Web.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+      <add name="ASPxHttpHandlerModule" type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+      <add name="XafHttpModule" type="DevExpress.ExpressApp.Web.XafHttpModule, DevExpress.ExpressApp.Web.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     </modules>
   </system.webServer>
   <system.web>
@@ -88,7 +88,7 @@
     </httpHandlers>
     <httpModules>
       <add name="ASPxHttpHandlerModule" type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-      <add name="XafHttpModule" type="DevExpress.ExpressApp.Web.XafHttpModule, DevExpress.ExpressApp.Web.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+      <add name="XafHttpModule" type="DevExpress.ExpressApp.Web.XafHttpModule, DevExpress.ExpressApp.Web.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     </httpModules>
     <!--
     Set compilation debug="true" to insert debugging
@@ -106,6 +106,7 @@
         <add assembly="DevExpress.Data.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
         <add assembly="DevExpress.Utils.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
         <add assembly="DevExpress.Web.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.RichEdit.v18.2.Core, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
         <add assembly="DevExpress.Web.ASPxTreeList.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
         <add assembly="DevExpress.Web.ASPxThemes.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
         <add assembly="DevExpress.Xpo.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -134,6 +135,7 @@
         <add assembly="DevExpress.ExpressApp.Validation.Web.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
         <add assembly="DevExpress.ExpressApp.Workflow.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
         <add assembly="DevExpress.Workflow.Activities.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Web.Resources.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
       </assemblies>
     </compilation>
     <!--
@@ -180,7 +182,7 @@
   <location path="Images">
     <system.web>
       <authorization>
-        <allow users="?"/>
+        <allow users="?" />
       </authorization>
     </system.web>
   </location>
